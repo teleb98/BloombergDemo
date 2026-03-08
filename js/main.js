@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const views = {
         entry: document.getElementById('entry-ui'),
         detail: document.getElementById('detail-ui'),
+        loading: document.getElementById('loading-ui'),
         player: document.getElementById('player-ui')
     };
 
@@ -47,6 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (newView === 'entry' || newView === 'detail') {
             updateFocus();
+        } else if (newView === 'loading') {
+            // Simulate Bloomberg app launch sequence
+            setTimeout(() => {
+                if (state.view === 'loading') { // check if not cancelled
+                    switchView('player');
+                }
+            }, 2000);
         } else if (newView === 'player') {
             const video = detailCards[state.detailIndex].dataset.video;
             mainPlayer.src = 'assets/videos/' + video;
@@ -147,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.detailIndex--;
                 updateFocus();
             } else if (e.key === 'Enter') {
-                switchView('player');
+                switchView('loading');
             } else if (isBack) {
                 switchView('entry');
             }
