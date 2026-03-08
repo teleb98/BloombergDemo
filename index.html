@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>Bloomberg Tizen Demo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 1. Entry UI (Now Brief - 4 Cards) -->
+    <div id="entry-ui" class="view active">
+        <div class="background-ambient entry-bg"></div>
+
+        <!-- Top-left Information Area -->
+        <div class="info-area">
+            <h1 class="current-time">10:42 AM</h1>
+            <p class="current-date">Wed, Oct 18</p>
+            <p class="current-weather">🌤️ Seoul 24°C</p>
+        </div>
+
+        <div class="carousel-container entry-carousel-container">
+            <div class="carousel-track" id="main-carousel">
+                <div class="card focusable" data-type="entry" data-index="0">
+                    <div class="card-thumbnail" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <div class="category-tag">Weather</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>27° (124° / 121°)</h2>
+                        <p>8AM(18°), 12PM(27°), 4PM(25°)</p>
+                    </div>
+                </div>
+                <div class="card focusable" data-type="entry" data-index="1">
+                    <div class="card-thumbnail"
+                        style="background-image: url('assets/images/gold.png'); background-size: cover; background-position: center;">
+                        <div class="category-tag live">Updated 5 min ago</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>Bloomberg | Top News</h2>
+                        <p>Gold Has More Downside Over Coming Weeks: 3-Minutes MLIV</p>
+                    </div>
+                </div>
+                <div class="card focusable" data-type="entry" data-index="2">
+                    <div class="card-thumbnail" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                        <div class="category-tag">Home Status</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>기기 상태 정보</h2>
+                        <p>26° / 67.3% / 35 min left</p>
+                    </div>
+                </div>
+                <div class="card focusable" data-type="entry" data-index="3">
+                    <div class="card-thumbnail" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                        <div class="category-tag">Music</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>Someday</h2>
+                        <p>Ray Cole</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Detail UI (4 Bloomberg Video Cards) -->
+    <div id="detail-ui" class="view">
+        <div class="background-ambient entry-bg"></div>
+
+        <!-- Top-left Information Area -->
+        <div class="info-area">
+            <h1 class="current-time">10:42 AM</h1>
+            <p class="current-date">Wed, Oct 18</p>
+            <p class="current-weather">🌤️ Seoul 24°C</p>
+        </div>
+
+        <div class="carousel-container detail-carousel-container">
+            <div class="carousel-track" id="detail-carousel">
+                <div class="card focusable" data-type="detail" data-index="0" data-video="news1-top.mp4">
+                    <div class="card-thumbnail">
+                        <video src="assets/videos/news1-top.mp4" muted loop class="preview-video"></video>
+                        <div class="category-tag">Top News</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>U.S. Sinks Iranian Warship...</h2>
+                        <p>Bloomberg News Now</p>
+                    </div>
+                </div>
+                <div class="card focusable" data-type="detail" data-index="1" data-video="news2-live.mp4">
+                    <div class="card-thumbnail">
+                        <video src="assets/videos/news2-live.mp4" muted loop class="preview-video"></video>
+                        <div class="category-tag live">Live TV</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>Middle East War Widens</h2>
+                        <p>Closing Bell</p>
+                    </div>
+                </div>
+                <div class="card focusable" data-type="detail" data-index="2" data-video="news3-insight.mp4">
+                    <div class="card-thumbnail">
+                        <video src="assets/videos/news3-insight.mp4" muted loop class="preview-video"></video>
+                        <div class="category-tag">Insight</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>Gold Has More Downside</h2>
+                        <p>3-Minutes MLIV</p>
+                    </div>
+                </div>
+                <div class="card focusable" data-type="detail" data-index="3" data-video="news4-featured.mp4">
+                    <div class="card-thumbnail">
+                        <video src="assets/videos/news4-featured.mp4" muted loop class="preview-video"></video>
+                        <div class="category-tag">Featured</div>
+                    </div>
+                    <div class="card-content">
+                        <h2>Record Redemptions</h2>
+                        <p>Private Credit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Full Screen Video Player -->
+    <div id="player-ui" class="view">
+        <video id="main-player" preload="auto"></video>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

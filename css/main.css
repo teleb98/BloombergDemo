@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+}
+
+/* Views */
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.view.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Backgrounds */
+.background-ambient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.entry-bg {
+    background-image: url('../assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.detail-bg {
+    background-image: url('../assets/images/now brief detail.png');
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Top-left Info Area */
+.info-area {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+
+.info-area h1 {
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+}
+
+.info-area p {
+    font-size: 32px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+/* Carousel */
+.carousel-container {
+    position: absolute;
+    left: 80px;
+    width: 1760px;
+    overflow: visible;
+}
+
+.entry-carousel-container {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.detail-carousel-container {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Cards */
+.card {
+    width: 400px;
+    height: 380px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    overflow: hidden;
+    background: rgba(30, 30, 40, 0.6);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    opacity: 0.6;
+    filter: brightness(0.8);
+    transform: scale(0.95);
+}
+
+.card.focused {
+    transform: scale(1.1);
+    border: 3px solid #fff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 255, 255, 0.4);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.card-thumbnail {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.preview-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card.focused .preview-video.play-preview {
+    opacity: 1;
+}
+
+.category-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-tag.live {
+    background: rgba(227, 0, 15, 0.8);
+    border-color: rgba(255, 100, 100, 0.5);
+}
+
+.card-content {
+    padding: 24px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-content h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #f8f8f8;
+}
+
+.card-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.4;
+}
+
+/* Full Screen Player */
+#player-ui {
+    background-color: #000;
+}
+
+#main-player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
