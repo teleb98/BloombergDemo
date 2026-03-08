@@ -6,17 +6,19 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>org.tizen.eclipse.web.webBuilder</name>
+			<name>org.tizen.web.project.builder.WebBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.tizen.web.project.builder</name>
+			<name>json.validation.builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.tizen.eclipse.web.webNature</nature>
+		<nature>org.tizen.web.project.builder.WebNature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>json.validation.nature</nature>
 	</natures>
 </projectDescription>
