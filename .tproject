@@ -3,7 +3,7 @@
     <platforms>
         <platform>
             <name>tv-samsung</name>
-            <version>7.0</version>
+            <version>9.0</version>
         </platform>
     </platforms>
 </tproject>
